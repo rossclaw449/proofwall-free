@@ -1,0 +1,12 @@
+services:
+  proofwall:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      PW_ADMIN_PASSWORD: ${PW_ADMIN_PASSWORD:?set PW_ADMIN_PASSWORD in .env or your shell}
+    volumes:
+      - proofwall-data:/data
+    restart: unless-stopped
+volumes:
+  proofwall-data:

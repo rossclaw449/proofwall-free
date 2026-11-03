@@ -1,0 +1,25 @@
+ProofWall Free License (draft, version 0.1)
+
+Copyright (c) 2026 ProofWall (operated by [SELLER NAME])
+TODO(Ross): replace [SELLER NAME] with the legal seller (you or your LLC) and
+have this license reviewed before launch.
+
+Permission is granted, free of charge, to any person obtaining a copy of this
+software ("ProofWall Free") to download, install, run, and modify it for their
+own use or their organization's internal use, including on commercial websites.
+
+You may not:
+  1. sell, sublicense, or redistribute this software or modified versions of it
+     as a paid product or hosted service; or
+  2. remove or circumvent the free-edition limits or the "Powered by ProofWall"
+     attribution in a copy you distribute to others.
+
+Paid editions (Solo, Agency) are licensed separately under the ProofWall EULA:
+https://rossclaw449.github.io/proofwall/terms.html
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
