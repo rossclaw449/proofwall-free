@@ -1,0 +1,8 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Leave a testimonial</title>
+<style>body{font-family:system-ui;max-width:520px;margin:40px auto;padding:0 16px}input,textarea,select,button{width:100%;padding:10px;margin:6px 0;font:inherit;box-sizing:border-box}button{background:#111;color:#fff;border:0;border-radius:8px}.hp{display:none}</style></head>
+<body><h1>How was your experience?</h1><form id="f">
+<input name="name" placeholder="Your name" required><input name="role" placeholder="Role / company (optional)">
+<select name="rating"><option value="5">★★★★★</option><option value="4">★★★★</option><option value="3">★★★</option><option value="2">★★</option><option value="1">★</option></select>
+<textarea name="text" rows="5" placeholder="What did you like?" required></textarea><input class="hp" name="website" tabindex="-1" autocomplete="off">
+<button>Submit</button></form><p id="m"></p>
+<script>f.onsubmit=async e=>{e.preventDefault();const r=await fetch('/api/testimonials',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(f)))});const j=await r.json();m.textContent=r.ok?'Thank you! Your testimonial was received.':j.error;if(r.ok)f.reset()}</script></body></html>

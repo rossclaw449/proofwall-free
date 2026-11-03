@@ -1,0 +1,8 @@
+<!doctype html><html><head><meta charset="utf-8"><title>ProofWall admin</title>
+<style>body{font-family:system-ui;max-width:900px;margin:30px auto;padding:0 16px}.c{border:1px solid #ddd;border-radius:8px;padding:12px;margin:10px 0}.pending{border-left:4px solid orange}.approved{border-left:4px solid green}.rejected{opacity:.5}code{background:#f4f4f4;padding:6px;display:block}</style></head>
+<body><h1>ProofWall</h1><p id="lic"></p><p>Embed on any site:</p><code id="emb"></code><div id="list"></div>
+<script>const E=s=>String(s).replace(/[&<>"']/g,c=>'&#'+c.charCodeAt(0)+';');
+emb.textContent=`<div id="proofwall"></div><script src="${location.origin}/widget.js" data-target="proofwall"><\/script>`;
+async function load(){const j=await (await fetch('/api/admin/testimonials')).json();lic.textContent='ProofWall Free: 1 wall, up to '+j.limit+' active testimonials ('+j.items.filter(t=>t.status!=='rejected').length+' used). The widget shows "Powered by ProofWall". Solo/Agency removes the limit and badge: https://rossclaw449.github.io/proofwall/#pricing';
+list.innerHTML=j.items.map(t=>`<div class="c ${t.status}"><b>${E(t.name)}</b> ${E(t.role)} ${'★'.repeat(t.rating)} <i>${t.status}</i><p>${E(t.text)}</p><button onclick="s('${t.id}','approved')">Approve</button> <button onclick="s('${t.id}','rejected')">Reject</button></div>`).join('')||'No testimonials yet. Share /collect with customers.'}
+async function s(id,status){await fetch('/api/admin/testimonials/'+id,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({status})});load()}load()</script></body></html>
