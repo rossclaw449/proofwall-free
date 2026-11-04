@@ -2,7 +2,7 @@ const fs = require('fs'); const path = require('path'); const crypto = require('
 const { Store } = require('./store');
 const FREE_LIMIT = 15; // free tier: 1 wall, up to 15 active (pending + approved) testimonials
 const PUB = path.join(__dirname, '..', 'public');
-const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&', '<': '<', '>': '>', '"': '"', "'": '&#39;' }[c]));
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '\x26amp;', '<': '\x26lt;', '>': '\x26gt;', '"': '\x26quot;', "'": '&#39;' }[c]));
 function createApp({ dataFile, adminPassword, limit = FREE_LIMIT }) {
   const store = new Store(dataFile);
   const hits = new Map(); // naive rate limit for public submit
