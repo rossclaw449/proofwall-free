@@ -1,0 +1,17 @@
+# Render Blueprint: https://render.com/docs/blueprint-spec
+# One-click: https://render.com/deploy?repo=https://github.com/rossclaw449/proofwall-free
+services:
+  - type: web
+    name: proofwall-free
+    runtime: docker
+    plan: starter # persistent disks need a paid instance; on the free plan data is lost on every redeploy
+    healthCheckPath: /
+    envVars:
+      - key: PW_ADMIN_PASSWORD
+        sync: false # Render asks you for this value when you deploy
+      - key: PW_DATA
+        value: /data/db.json
+    disk:
+      name: proofwall-data
+      mountPath: /data
+      sizeGB: 1
