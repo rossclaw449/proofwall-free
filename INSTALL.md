@@ -2,6 +2,9 @@
 
 ProofWall Free is a self-hosted testimonial wall: **1 wall, up to 15 active testimonials**, no license key, zero npm dependencies. The embedded wall shows a small "Powered by ProofWall" badge.
 
+## Option 0: One-click cloud deploy
+Render, Railway, and Fly.io configs are included. See [DEPLOY.md](DEPLOY.md).
+
 ## Option A: Docker Compose (recommended)
 ```sh
 git clone https://github.com/rossclaw449/proofwall-free.git && cd proofwall-free
